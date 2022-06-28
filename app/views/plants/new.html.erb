@@ -1,0 +1,10 @@
+<h1>New Plant Page</h1>
+
+
+      <%= simple_form_for @plant do |f| %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :category %>
+        <%= f.input :price_per_day %>
+        <%= f.submit "Create new plant", class: "btn btn-primary" %>
+      <% end %>

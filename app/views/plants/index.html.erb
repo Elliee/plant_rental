@@ -1,0 +1,10 @@
+<h1>Plants Index Page </h1>
+
+<ul>
+  <% @plants.each do |plant| %>
+    <li><%= plant.title %></li>
+    <li><%= plant.category %></li>
+    <li><%= plant.description %></li>
+    <li><%= plant.price_per_day %></li>
+  <% end %>
+</ul>
