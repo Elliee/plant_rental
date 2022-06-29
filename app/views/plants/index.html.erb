@@ -1,10 +1,20 @@
-<h1>Plants Index Page </h1>
 
-<ul>
+<div class="container">
+
+<h1 class="text-center mb-3">Browse Plants </h1>
+
+<div class="cards">
   <% @plants.each do |plant| %>
-    <li><%= plant.title %></li>
-    <li><%= plant.category %></li>
-    <li><%= plant.description %></li>
-    <li><%= plant.price_per_day %></li>
+    <div class="card">
+      <h4 class="text-center"><%= plant.title %></h4>
+      <%= cl_image_tag plant.photo.key, class: "card-img" %>
+      <p><strong>Category:</strong> <%= plant.category %></p>
+      <p><strong>Price:</strong> $<%= plant.price_per_day %> per/day</p>
+      <%= link_to "View", plant_path(plant), class: "btn btn-primary btn-index" %>
+    </div>
   <% end %>
-</ul>
+</div>
+
+
+
+</div>

@@ -1,1 +1,24 @@
 // Specific CSS for your home-page
+.container {
+  width: 1200px;
+  margin: 40px auto;
+  height: 100vh;
+}
+
+@media(max-width: 992px) {
+  .container {
+    width: 800px;
+  }
+}
+
+@media(max-width: 768px) {
+  .container {
+    width: 600px;
+  }
+}
+
+@media(max-width: 576px) {
+  .container {
+    width: 300px;
+  }
+}

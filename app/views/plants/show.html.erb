@@ -1,6 +1,27 @@
-<h1>Plant Show Page</h1>
 
-<h2><%= @plant.title %></h2>
-<p><%= @plant.description %></p>
-<p><%= @plant.category %></p>
-<p><%= @plant.price_per_day %></p>
+
+
+
+<div class="container">
+<h1 class="text-center pb-5"><%= @plant.title %></h1>
+
+  <div class="row">
+
+    <div class="col-12 col-lg-6">
+      <%= cl_image_tag @plant.photo.key, class: "img-show"  %>
+    </div>
+
+    <div class="col-12 col-lg-6 description">
+      <p><%= @plant.description %></p>
+      <p><strong>Category:</strong> <%= @plant.category %></p>
+      <p><strong>Price:</strong> $<%= @plant.price_per_day %> per/day</p>
+      <%= link_to "Book", new_plant_booking_path(@plant), class: 'btn btn-primary' %>
+
+    </div>
+
+  </div>
+
+
+
+
+</div>

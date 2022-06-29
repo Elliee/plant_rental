@@ -1,0 +1,11 @@
+<div class="container">
+  <h3>Edit Booking</h3>
+  <%= simple_form_for ([@plant, @booking]) do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit "Update", class: "btn btn-primary" %>
+  <% end %>
+
+
+
+</div>
