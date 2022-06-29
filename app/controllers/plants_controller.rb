@@ -1,12 +1,11 @@
 class PlantsController < ApplicationController
   before_action :set_plant, only: %i[show edit update destroy]
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: %i[index show]
   def index
     @plants = Plant.all
   end
 
   def show
-
   end
 
   def new
