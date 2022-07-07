@@ -1,0 +1,61 @@
+<div class="container">
+<h1 class="text-center pb-3">My Bookings</h1>
+<%= current_user.email %>
+<h3>Current Bookings</h3>
+
+<div class="table-responsive">
+<table class="table table-bordered">
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">Plant</th>
+        <th scope="col">Owner</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Cancel</th>
+        <th scope="col">Status</th>
+        <th scope="col">Cost</th>
+      </tr>
+    </thead>
+      <% @bookings.each do |booking| %>
+    <tbody>
+      <tr>
+        <td scope="row"><%=link_to booking.plant.title, plant_path(booking.plant) %></td>
+        <td><%= booking.plant.user.email %></td>
+        <td><%= booking.start_date %></td>
+        <td><%= booking.end_date %></td>
+        <td><%= link_to "Edit", edit_booking_path(booking) %> </td>
+        <td><%= link_to "Cancel", booking_path(booking), method: :delete, data: { confirm: "Are you sure? "} %> </td>
+        <td><%= booking.status %></td>
+      </tr>
+    </tbody>
+    <%end %>
+</table>
+</div>
+
+<h3>Past Bookings</h3>
+
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">Plant</th>
+        <th scope="col">Owner</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+      </tr>
+    </thead>
+    <% @past_bookings.each do |b| %>
+    <tbody>
+      <tr>
+        <td scope="row"><%=link_to b.plant.title, plant_path(b.plant) %></td>
+        <td><%= b.plant.user.email %></td>
+        <td><%= b.start_date %></td>
+        <td><%= b.end_date %></td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+</div>
+
+</div>

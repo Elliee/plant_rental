@@ -1,0 +1,13 @@
+.btn-right {
+  float: right;
+  text-decoration: none;
+}
+
+.btn-flex {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn-edit, .btn-delete {
+  width: 80px;
+}

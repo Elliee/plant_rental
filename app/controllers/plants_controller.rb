@@ -35,6 +35,10 @@ class PlantsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def owned_plants
+    @plants = Plant.all.filter { |plant| plant.user_id == current_user.id }
+  end
+
   private
 
   def plant_params

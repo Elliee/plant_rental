@@ -7,9 +7,14 @@
   <% @plants.each do |plant| %>
     <div class="card">
       <h4 class="text-center"><%= plant.title %></h4>
-      <%= cl_image_tag plant.photo.key, class: "card-img" %>
+      <% if plant.photo.key == nil %>
+      <p>No Photo Available</p>
+      <%else %>
+        <%= cl_image_tag plant.photo.key, class: "card-img" %>
+      <%end %>
       <p><strong>Category:</strong> <%= plant.category %></p>
       <p><strong>Price:</strong> $<%= plant.price_per_day %> per/day</p>
+      <p><%= plant.user.email %></p>
       <%= link_to "View", plant_path(plant), class: "btn btn-primary btn-index" %>
     </div>
   <% end %>

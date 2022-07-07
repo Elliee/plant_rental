@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  get '/dashboard', to: 'pages#dashboard'
+
   resources :plants do
     resources :bookings, only: %i[new create]
   end
   resources :bookings, only: %i[show edit update destroy]
-
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get '/outbound_bookings', to: 'bookings#outbound_bookings'
+  get '/inbound_bookings', to: 'bookings#inbound_bookings'
+  get '/owned_plants', to: 'plants#owned_plants'
+  post '/inbound_bookings/accept_booking', to: 'bookings#accept_booking'
+  post '/inbound_bookings/decline_booking', to: 'bookings#decline_booking'
 end

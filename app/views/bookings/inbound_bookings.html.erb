@@ -1,0 +1,35 @@
+<div class="container">
+<h1 class="text-center pb-3">My Bookings Requests</h1>
+<%= current_user.email %>
+
+<div class="table-responsive">
+<table class="table table-bordered">
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">Plant</th>
+        <th scope="col">User</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Status</th>
+        <th scope="col">Accept</th>
+        <th scope="col">Decline</th>
+      </tr>
+    </thead>
+      <% @bookings.each do |booking| %>
+    <tbody>
+      <tr>
+        <td scope="row"><%=link_to booking.plant.title, plant_path(booking.plant) %></td>
+        <td><%= booking.user.email %></td>
+        <td><%= booking.start_date %></td>
+        <td><%= booking.end_date %></td>
+        <td><%= booking.status %></td>
+        <td><%= link_to "Accept", inbound_bookings_accept_booking_path(booking_id: booking.id), method: :post %></td>
+        <td><%= link_to "Decline", inbound_bookings_decline_booking_path(booking_id: booking.id), method: :post  %></td>
+      </tr>
+    </tbody>
+    <%end %>
+</table>
+</div>
+
+
+</div>
