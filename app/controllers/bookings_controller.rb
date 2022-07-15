@@ -46,7 +46,7 @@ class BookingsController < ApplicationController
   end
 
   def inbound_bookings
-    @bookings = Booking.all.select { |b| b.user_id != current_user.id }
+    @bookings = Booking.all.reject { |b| b.user_id == current_user.id }
   end
 
   def accept_booking
