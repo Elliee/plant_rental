@@ -1,6 +1,16 @@
 .btn-right {
   float: right;
   text-decoration: none;
+  padding: 8px;
+  background-color: #a0c49e;
+  color: white;
+  border-radius: 8px;
+  border: none;
+}
+
+.btn-right:hover {
+  background-color: #8cac8b;
+  color: white;
 }
 
 .btn-flex {
@@ -8,6 +18,30 @@
   justify-content: space-evenly;
 }
 
+
 .btn-edit, .btn-delete {
   width: 80px;
+  border-radius: 8px;
+}
+
+.btn-edit {
+  background-color: #a0c49e;
+  border: none;
+}
+
+.btn-edit:hover {
+  background-color: #8cac8b;;
+}
+
+.btn-delete {
+  background-color: #dbdbdb;
+  border: none;
+}
+
+.btn-delete:hover {
+  background-color: #d2cfcf;
+}
+
+#strong {
+  font-weight:bold;
 }

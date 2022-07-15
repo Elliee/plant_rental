@@ -1,11 +1,40 @@
 .img-show {
-  width: 300px;
-  height: 300px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  border-radius: 5px;
 }
 
 .description {
   font-size: 18px;
+}
+
+.btn-show {
+  background-color: #a0c49e;
+  border: none;
+  border-radius: 8px;
+  width: 200px;
+  padding: 10px;
+}
+
+.btn-show:hover {
+  background-color: #8cac8b;
+}
+
+.text-lg {
+  font-size: 24px;
+}
+.show-hr {
+  width: 100%;
+  padding: 0;
+}
+
+@media(max-width: 576px) {
+  .show  {
+    text-align: center;
+  }
+  .img-show {
+    width: 300px;
+    height: 300px;
+  }
 }

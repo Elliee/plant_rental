@@ -1,0 +1,40 @@
+
+.footer {
+  background-color: rgb(199, 199, 199);
+  width: 100vw;
+}
+
+.footer-flex {
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+@media(max-width: 992px) {
+  .footer-flex {
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.footer-item ul {
+  list-style-type: none;
+}
+
+.links-social {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.links-social a {
+  border: 1px solid rgb(118, 118, 118);
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 30px;
+  color: grey;
+
+}

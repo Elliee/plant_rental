@@ -31,15 +31,42 @@
 }
 
 .card {
-  padding: 5px;
+  padding: 8px;
   width: 250px;
-  border-radius: 5px;
+  border-radius: 8px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
 
-
+.card p {
+  margin-bottom: 12px;
 }
 .card-img {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   margin: auto;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.btn-index {
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 8px;
+  background-color: #a0c49e;
+  border: none;
+  color: white;
+}
+
+.btn-index:hover {
+  background-color: #8cac8b;
+}
+
+.form-search {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.form-input {
+  width: 200px;
 }

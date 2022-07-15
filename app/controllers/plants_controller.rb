@@ -2,7 +2,7 @@ class PlantsController < ApplicationController
   before_action :set_plant, only: %i[show edit update destroy]
   skip_before_action :authenticate_user!, only: %i[index show]
   def index
-    @plants = Plant.all
+    @plants = Plant.search(params[:search])
   end
 
   def show
@@ -32,17 +32,19 @@ class PlantsController < ApplicationController
 
   def destroy
     @plant.destroy
-    redirect_to dashboard_path
+    redirect_to owned_plants_path
   end
 
   def owned_plants
-    @plants = Plant.all.filter { |plant| plant.user_id == current_user.id }
+    @user = current_user
+    @plants = @user.plants
   end
 
   private
 
   def plant_params
-    params.require(:plant).permit(:title, :description, :category, :price_per_day, :photo)
+    params.require(:plant).permit(:title, :description, :category, :price_per_day, :photo,
+                                  :search, :care_level, :size, :watering, :pet_friendly, :light)
   end
 
   def set_plant

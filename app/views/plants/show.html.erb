@@ -1,27 +1,23 @@
-
-
-
-
 <div class="container">
-<h1 class="text-center pb-5"><%= @plant.title %></h1>
-
-  <div class="row">
-
-    <div class="col-12 col-lg-6">
+  <div class="row show">
+    <div class="col-sm-12 col-md-12 col-lg-6 pt-5">
       <%= cl_image_tag @plant.photo.key, class: "img-show"  %>
     </div>
-
-    <div class="col-12 col-lg-6 description">
-      <p><%= @plant.description %></p>
-      <p><strong>Category:</strong> <%= @plant.category %></p>
-      <p><strong>Price:</strong> $<%= @plant.price_per_day %> per/day</p>
-      <%= link_to "Book", new_plant_booking_path(@plant), class: 'btn btn-primary' %>
-
+    <div class="col-sm-12 col-md-12 col-lg-6 description pt-5">
+      <p class="text-lg"><%= @plant.title %></p>
+      <p class="text-lg"><%= @plant.description %></p>
+      <p class="text-lg">$<%= @plant.price_per_day %> per/day</p>
+      <%= link_to "Book Now", new_plant_booking_path(@plant), class: 'btn btn-primary btn-show' %>
+      <hr class="show-hr">
+      <p>Details and Care</p>
+      <p><i class="fa fa-leaf"></i> Category: <%= @plant.category %></p>
+      <p><i class="fa fa-heart"></i> Care Level: <%= @plant.care_level %></p>
+      <p><i class="fa fa-water"></i> Watering: <%= @plant.watering %></p>
+      <p><i class="fa fa-seedling"></i> Size: <%= @plant.size %></p>
+      <p><i class="fa fa-dog"></i> Pet Friendly: <%= @plant.pet_friendly %> </p>
+      <p><i class="fa fa-user-check"></i> Owner: <%= @plant.user.email %></p>
     </div>
-
   </div>
-
-
-
-
 </div>
+
+<%= render 'shared/footer' %>

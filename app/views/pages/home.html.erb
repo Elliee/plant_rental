@@ -1,11 +1,57 @@
-
-<%# <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p> %>
-
-<div class="container text-center">
-
-<h1 class="text-center mt-5">Rent a Plant</h1>
-<h3 class="text-center">Find the perfect plant for you.</h3>
-<%= link_to "Browse all Plants", plants_path, class: 'btn btn-primary mt-5'%>
-
+<div class="home-bg">
+  <h1 class="text-center home-mh">Rent a Plant</h1>
+  <h3 class="text-center home-sh">Find the perfect plant for you</h3>
+  <%= link_to "Browse all Plants", plants_path, class: 'btn btn-primary home-btn'%>
 </div>
+<div class="container home">
+  <h3 class="text-center pt-5">How it works</h3>
+  <hr>
+  <div class="cards-flex text-center">
+    <div class="card-home">
+      <h5 class="pb-2">Search 🔍</h5>
+      <i class="fa-solid magnifying-glass-plus"></i>
+      <p>Lorem ipsum dolor sit amet. Vel internos laborum ut similique omnis quo quas assumenda qui placeat voluptatem non galisum amet.</p>
+    </div>
+    <div class="card-home">
+      <h5 class="pb-2">Select  📅 </h5>
+      <p>Lorem ipsum dolor sit amet. Vel internos laborum ut similique omnis quo quas assumenda qui placeat voluptatem non galisum amet.</p>
+    </div>
+    <div class="card-home">
+      <h5 class="pb-2">Enjoy 🪴</h5>
+      <p>Lorem ipsum dolor sit amet. Vel internos laborum ut similique omnis quo quas assumenda qui placeat voluptatem non galisum amet.</p>
+    </div>
+  </div>
+
+  <h3 class="text-center pt-5 pb-1">Benefits of Indoor Plants</h3>
+  <hr>
+  <div class="benefits-flex pt-5">
+    <div class="flex-item flex-img1">
+    </div>
+    <div class="flex-item flex-bg">
+      <h4 class="flex-header">Brighten up your life</h4>
+      <p class="flex-text">Lorem ipsum dolor sit amet. Vel internos laborum ut similique omnis quo quas assumenda qui placeat voluptatem non galisum amet.
+      Vel internos laborum ut similique omnis quo quas assumenda qui placeat voluptatem non galisum amet.</p>
+    </div>
+  </div>
+
+  <div class="benefits-flex2 pb-5">
+    <div class="flex-item flex-bg">
+      <h4 class="flex-header">Boost your mood</h4>
+      <p class="flex-text">Lorem ipsum dolor sit amet. Vel internos laborum ut similique omnis quo quas assumenda qui placeat voluptatem non galisum amet.
+      Vel internos laborum ut similique omnis quo quas assumenda qui placeat voluptatem non galisum amet.</p>
+    </div>
+    <div class="flex-item flex-img2">
+    </div>
+  </div>
+
+
+  <div class="sign-up">
+    <h3 class="text-center pt-5 ">Join the club</h3>
+    <hr>
+    <p class="text-center pt-2 listing">Need to spruce up your space? Got your own plant babies you wanna rent out? <br>
+      Sign up in seconds to start listing your plants! 🌿
+    </p>
+    <%= link_to "Sign Up", new_user_registration_path, class: "home-btn text-center mt-5" %>
+  </div>
+</div>
+<%= render 'shared/footer' %>

@@ -43,12 +43,10 @@ class BookingsController < ApplicationController
     date = Date.today
     @bookings = Booking.all.filter { |booking| booking.user_id == current_user.id && booking.end_date > date }
     @past_bookings = Booking.all.select { |b| b.end_date < date }
-
   end
 
   def inbound_bookings
-    my_plants = current_user.plants.map { |plant| plant.id }
-    @bookings = Booking.all.select { |booking| my_plants.include? booking.plant_id }
+    @bookings = Booking.all.select { |b| b.user_id != current_user.id }
   end
 
   def accept_booking

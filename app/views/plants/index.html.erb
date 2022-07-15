@@ -1,25 +1,25 @@
-
 <div class="container">
-
-<h1 class="text-center mb-3">Browse Plants </h1>
-
-<div class="cards">
-  <% @plants.each do |plant| %>
-    <div class="card">
-      <h4 class="text-center"><%= plant.title %></h4>
-      <% if plant.photo.key == nil %>
-      <p>No Photo Available</p>
-      <%else %>
-        <%= cl_image_tag plant.photo.key, class: "card-img" %>
-      <%end %>
-      <p><strong>Category:</strong> <%= plant.category %></p>
-      <p><strong>Price:</strong> $<%= plant.price_per_day %> per/day</p>
-      <p><%= plant.user.email %></p>
-      <%= link_to "View", plant_path(plant), class: "btn btn-primary btn-index" %>
-    </div>
-  <% end %>
+  <div class="form-search">
+    <%= form_tag plants_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Find the perfect plant", class: "form-input" %>
+    <%= submit_tag "Search", :title => nil, class: "form-btn" %>
+    <% end %>
+  </div>
+  <div class="cards">
+    <% @plants.each do |plant| %>
+      <div class="card">
+        <% if plant.photo.key == nil %>
+          <p>No Photo Available</p>
+        <%else %>
+          <%= cl_image_tag plant.photo.key, class: "card-img" %>
+        <%end %>
+        <h5><%= plant.title %></h5>
+        <p> <%= plant.category %></p>
+        <p>$<%= plant.price_per_day %> per day</p>
+        <%= link_to "View", plant_path(plant), class: "btn btn-primary btn-index" %>
+      </div>
+      <% end %>
+  </div>
 </div>
 
-
-
-</div>
+<%= render 'shared/footer' %>

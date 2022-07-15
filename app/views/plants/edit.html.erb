@@ -1,14 +1,19 @@
-
 <div class="container">
-
-<h1 class="text-center">Edit</h1>
-
-  <%= simple_form_for @plant do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :category %>
-    <%= f.input :price_per_day %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit "Submit", class: "btn btn-primary" %>
-  <% end %>
+  <h1 class="text-center">Edit</h1>
+    <div class="form-container">
+      <%= simple_form_for @plant do |f| %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :category %>
+        <%= f.input :price_per_day %>
+        <%= f.input :size %>
+        <%= f.input :care_level %>
+        <%= f.input :light %>
+        <%= f.input :watering %>
+        <%= f.input :pet_friendly %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit "Submit", class: "btn btn-primary btn-edit" %>
+      <% end %>
+    </div>
 </div>
+<%= render 'shared/footer' %>

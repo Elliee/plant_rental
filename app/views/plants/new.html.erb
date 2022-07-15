@@ -1,11 +1,15 @@
-<h1>New Plant Page</h1>
+<div class="container">
 
-
+  <div class="form-container">
+    <h1 class="text-center">New Plant</h1>
       <%= simple_form_for @plant do |f| %>
         <%= f.input :title %>
         <%= f.input :description %>
-        <%= f.input :category %>
+        <%= f.input  :category, as: :select, collection: ['Indoor', 'Outdoor', 'Succulent', 'Tropical'] %>
         <%= f.input :price_per_day %>
         <%= f.input :photo, as: :file %>
-        <%= f.submit "Create new plant", class: "btn btn-primary" %>
+        <%= f.submit "Create new plant", class: "btn btn-primary new-plant-btn" %>
       <% end %>
+  </div>
+</div>
+<%= render 'shared/footer' %>
