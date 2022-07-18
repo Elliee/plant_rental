@@ -1,7 +1,7 @@
 <div class="container">
   <div class="form-search">
     <%= form_tag plants_path, :method => 'get' do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Find the perfect plant", class: "form-input" %>
+    <%= text_field_tag :search, params[:search], class: "form-input" %>
     <%= submit_tag "Search", :title => nil, class: "form-btn" %>
     <% end %>
   </div>

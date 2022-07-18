@@ -69,4 +69,17 @@
 
 .form-input {
   width: 200px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding: 4px;
+}
+.form-btn {
+  background-color: rgb(207, 207, 207);
+  border-radius: 5px;
+  padding: 5px;
+  border: none;
+}
+
+.form-btn:hover {
+  background-color:rgb(201, 201, 201);
 }
