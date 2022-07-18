@@ -5,7 +5,11 @@
     <% @plants.each do |plant| %>
       <div class="card">
         <h4 class="text-center"><%= plant.title %></h4>
-        <%= cl_image_tag plant.photo.key, class: "card-img" %>
+        <% if plant.photo.key == nil %>
+          <p>No Photo Available</p>
+        <%else %>
+          <%= cl_image_tag plant.photo.key, class: "card-img" %>
+        <%end %>
         <p><%= plant.category %></p>
         <p><%= plant.description %></p>
         <p></span>$<%=plant.price_per_day %> per/day</p>
