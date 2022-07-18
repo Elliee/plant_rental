@@ -1,6 +1,9 @@
 <div class="container">
   <%= link_to "Add new plant", new_plant_path, class: "btn-right" %>
   <h1 class="text-center pt-5">My Plants</h1>
+  <% if @plants.length == 0 %>
+    <p class="text-center pt-4">No Plants Yet!</p>
+  <% else %>
   <div class="cards">
     <% @plants.each do |plant| %>
       <div class="card">
@@ -22,6 +25,7 @@
           </div>
         </div>
       </div>
+    <%end %>
     <%end %>
   </div>
 </div>

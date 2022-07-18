@@ -5,8 +5,13 @@
       <%= simple_form_for @plant do |f| %>
         <%= f.input :title %>
         <%= f.input :description %>
-        <%= f.input  :category, as: :select, collection: ['Indoor', 'Outdoor', 'Succulent', 'Tropical'] %>
+        <%= f.input :category %>
         <%= f.input :price_per_day %>
+        <%= f.input :size %>
+        <%= f.input :watering %>
+        <%= f.input :light %>
+        <%= f.input :care_level, as: :select, collection: ['Easy Care', 'Moderate Care', 'High Care'] %>
+        <%= f.input :pet_friendly, as: :select, collection: ['Yes', 'No - Please keep me away from furry friends'] %>
         <%= f.input :photo, as: :file %>
         <%= f.submit "Create new plant", class: "btn btn-primary new-plant-btn" %>
       <% end %>

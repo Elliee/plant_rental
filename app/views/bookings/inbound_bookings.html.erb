@@ -1,7 +1,11 @@
 <div class="container">
   <h1 class="text-center pt-5 pb-3">My Bookings Requests</h1>
+  <%= current_user.email %>
 
   <div class="table-responsive">
+  <% if @bookings.length == 0 %>
+    <p class="text-center pt-4">No Booking Requests Yet!</p>
+  <% else %>
     <table class="table table-bordered">
       <thead>
         <tr class="table-light">
@@ -30,6 +34,7 @@
       </tbody>
       <%end %>
     </table>
+    <%end %>
   </div>
 </div>
 <%= render 'shared/footer' %>

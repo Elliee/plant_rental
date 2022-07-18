@@ -4,6 +4,9 @@
   <h3 class="pb-3">Current Bookings</h3>
 
   <div class="table-responsive">
+    <% if @bookings.length == 0 %>
+      <p>No Bookings Yet!</p>
+    <% else %>
     <table class="table table-bordered">
       <thead>
         <tr class="table-light">
@@ -17,8 +20,8 @@
           <th scope="col">Total Cost</th>
         </tr>
       </thead>
-      <% @bookings.each do |booking| %>
       <tbody>
+        <% @bookings.each do |booking| %>
         <tr>
           <td scope="row"><%=link_to booking.plant.title, plant_path(booking.plant) %></td>
           <td><%= booking.plant.user.email %></td>
@@ -29,14 +32,18 @@
           <td><%= booking.status %></td>
           <td><%= number_to_currency(booking.booking_total) %></td>
         </tr>
+        <% end %>
       </tbody>
-      <%end %>
+      <% end %>
     </table>
   </div>
 
   <h3 class="pb-3 pt-3">Past Bookings</h3>
 
   <div class="table-responsive">
+    <% if @past_bookings.length == 0 %>
+      <p>No Past Bookings Yet!</p>
+    <% else %>
     <table class="table table-bordered">
       <thead>
         <tr class="table-light">
@@ -56,6 +63,7 @@
           <td><%= b.end_date %></td>
           <td><%= number_to_currency(b.booking_total) %></td>
         </tr>
+        <%end %>
       </tbody>
       <% end %>
     </table>
