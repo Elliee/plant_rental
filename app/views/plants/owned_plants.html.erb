@@ -8,7 +8,7 @@
         <% if plant.photo.key == nil %>
           <p>No Photo Available</p>
         <%else %>
-          <%= cl_image_tag plant.photo.key, :cloud_name => 'dcdmzl5kl' class: "card-img" %>
+          <%= cl_image_tag plant.photo.key, class: "card-img" %>
         <%end %>
         <p><%= plant.category %></p>
         <p><%= plant.description %></p>
